@@ -93,3 +93,44 @@ console.log(heap.heapSort())
 
 // Heapify(Building a Heap): The time complexity of building a heap(heapify) from an unsorted array is O(n), 
 // Heap Sort: Heap sort is an in-place sorting algorithm that utilizes the heap data structure. The time complexity of heap sort is O(n log n),
+
+
+
+class PriorityQueue {
+    constructor() {
+        this.heap = new Heap();
+    }
+
+    enqueue(element, priority) {
+        const item = { element, priority };
+        this.heap.insert(item);
+    }
+
+    dequeue() {
+        return this.heap.deleteMax()?.element;
+    }
+
+    print() {
+        console.log(this.heap);
+    }
+}
+
+// Example usage:
+const priorityQueue = new PriorityQueue();
+
+priorityQueue.enqueue('Task 1', 2);
+priorityQueue.enqueue('Task 2', 1);
+priorityQueue.enqueue('Task 3', 3);
+
+console.log('Priority Queue:');
+priorityQueue.print();
+
+const highestPriorityTask = priorityQueue.dequeue();
+console.log('Dequeued task:', highestPriorityTask);
+
+console.log('Priority Queue after dequeue:');
+priorityQueue.print();
+
+// In this example, the PriorityQueue class uses the Heap class internally to manage the priority queue.The enqueue method inserts elements with their respective priorities into the heap, and the dequeue method removes the element with the highest priority from the heap.
+
+// You can modify and extend the PriorityQueue class as needed to suit your specific requirements.

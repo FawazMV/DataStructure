@@ -52,7 +52,7 @@ class Graph {
         while (queue.length > 0) {
             const currentVertex = queue.shift();
             console.log(currentVertex);
-
+            console.log(this.list[currentVertex])
             for (let neighbor of this.list[currentVertex]) {
                 if (!visited[neighbor]) {
                     queue.push(neighbor);

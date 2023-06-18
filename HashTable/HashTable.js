@@ -48,6 +48,7 @@ const ht = new Table(10)
 ht.set('name','Fawaz')
 ht.set('age', 23)
 ht.set('naem','Shaminas')
+ht.set(10,'Yaseen')
 ht.delete('age')
 
-console.log(ht.get('age'))
+console.log(ht.get(10))
